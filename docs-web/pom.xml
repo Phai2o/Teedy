@@ -185,8 +185,8 @@
                 <docs.home>../data/docs</docs.home>
               </systemProperties>
               <webApp>
-                <contextPath>/docs-web</contextPath>
-                <overrideDescriptor>${project.basedir}/src/dev/main/webapp/web-override.xml</overrideDescriptor>
+                <resourceBase>${project.basedir}/src/main/webapp/src</resourceBase>                                                       
+                <overrideDescriptor>${project.basedir}/src/dev/main/webapp/web-override.xml</overrideDescriptor>                          
               </webApp>
             </configuration>
           </plugin>
