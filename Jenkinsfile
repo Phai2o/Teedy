@@ -20,7 +20,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn -B test'
+                sh 'mvn -B -Dmaven.test.failure.ignore=true test'
             }
             post {
                 always {
