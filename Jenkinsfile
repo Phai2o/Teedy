@@ -43,16 +43,16 @@ pipeline {
 
         stage('Site') {
             steps {
-                sh 'mvn -B -DskipTests site site:stage'
+                sh 'mvn -B -DskipTests -fae site'
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'target/staging/**', allowEmptyArchive: true
+                    archiveArtifacts artifacts: '**/target/site/**', allowEmptyArchive: true
                     publishHTML(target: [
                         allowMissing: true,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'target/staging',
+                        reportDir: 'target/site',
                         reportFiles: 'index.html',
                         reportName: 'Site Documentation'
                     ])
